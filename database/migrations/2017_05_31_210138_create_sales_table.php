@@ -20,6 +20,9 @@ class CreateSalesTable extends Migration
             $table->integer('clients_id')->unsigned()->index();
             $table->foreign('clients_id')->references('id')->on('clients')->onDelete('cascade');
 
+            $table->integer('user_id')->unsigned()->index();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+
         });
     }
 
