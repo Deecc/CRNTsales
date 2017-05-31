@@ -18,6 +18,9 @@ class CreatePaymentsTable extends Migration
             $table->decimal('amount', 11,2);
             $table->date('forseen_date');
             $table->date('payment_date');
+
+            $table->integer('sales_id')->unsigned()->index();
+            $table->foreign('sales_id')->references('id')->on('sales')->onDelete('cascade');
         });
     }
 
