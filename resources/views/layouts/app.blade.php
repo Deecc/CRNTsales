@@ -8,10 +8,13 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Vendas Carnatal') }}</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    
+    <!-- Scripts -->
+    <script src="{{ asset('js/modernizr.js') }}"></script>
 </head>
 <body>
     <div id="app">
@@ -29,7 +32,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        {{ config('app.name', 'Vendas Carnatal') }}
                     </a>
                 </div>
 
@@ -43,9 +46,34 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @if (Auth::guest())
-                            <li><a href="{{ route('login') }}">Login</a></li>
-                            <li><a href="{{ route('register') }}">Register</a></li>
+                            <li><a href="{{ route('login') }}">Entrar</a></li>
+                            <li><a href="{{ route('register') }}">Registrar</a></li>
                         @else
+                            <li>
+                                <a href="#" role="button"> Início </a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    Relatórios <span class="caret"></span>
+                                </a>
+
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <a href="#">
+                                            Lista de Clientes
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            Camarotes disponíveis
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            Camarotes vendidos
+                                        </a>
+                                    </li>
+                                </ul>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     {{ Auth::user()->name }} <span class="caret"></span>
@@ -56,7 +84,7 @@
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                            Logout
+                                            Sair
                                         </a>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -75,6 +103,33 @@
     </div>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="{{ asset('js/jquery-2.1.4.js') }}"></script>
+    <script src="{{ asset('js/app.js') }}"></script>    
+    <script src="{{ asset('js/jquery.menu-aim.js') }}"></script>
+    <script src="{{ asset('js/main.js') }}"></script> <!-- Resource jQuery -->
+    <script src="{{ asset('js/jquery.selectable-grid.js') }}"></script>
+
+    @yield('script')
+
+	<script>
+        $(document).ready(function () {
+            var updateSelected = function () {
+                var text = [];
+                $('#camarote-grid').selectableGrid().selected().each(function (index, element) {
+                    text.push($(element).text().trim());
+                });
+
+                $('#camcarote-grid-selected').text('Selected items: ' + text.join(', '));
+            };
+            $('.selectable-grid-column').click(updateSelected);
+            updateSelected();            
+        });
+    </script>
+
+    
+   
+    
 </body>
 </html>

@@ -6,8 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Cabin extends Model
 {
-    public function sale()
+    public $timestamps = null;
+
+    public function client()
     {
-        return $this->belongsTo('App\Sale');
+        return $this->belongsTo('App\Client');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo('App\User');
     }
 }

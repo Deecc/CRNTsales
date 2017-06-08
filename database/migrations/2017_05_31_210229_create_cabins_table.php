@@ -15,13 +15,13 @@ class CreateCabinsTable extends Migration
     {
         Schema::create('cabins', function (Blueprint $table) {
             $table->increments('id');
-            $table->decimal('price', 11,2);
-            $table->string('description');
             $table->string('position');
 
-            $table->integer('sales_id')->unsigned()->index();
-            $table->foreign('sales_id')->references('id')->on('sales')->onDelete('cascade');
+            $table->integer('client_id')->nullable()->unsigned()->index();
+            $table->foreign('client_id')->references('id')->on('clients')->onDelete('cascade');
 
+            $table->integer('user_id')->nullable()->unsigned()->index();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

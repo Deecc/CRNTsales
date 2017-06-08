@@ -19,34 +19,19 @@ class CabinController extends Controller
         return view('cabin.index', ['cabins' => $cabins]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function attachClient(Request $request)
     {
-        return view('cabin.create');
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        $cabin = new Cabin;
-        $cabin->fill($request->all());
-
-        if ($cabin->save()) {
-            return response($cabin, 201);
-        } else {
-            return response(['error' => ['code' => '500', 'message' => 'Failed to create a new cabin!']], 500);
+        $cabin = Cabin::findOrFail($request->id);
+        $cabin->client_id = $request->client_id;
+        if($cabin->save())
+        {
+            return response(['message' => 'sucessfull'], 200);
+        }
+        else
+        {
+            return response(['message' => 'error!'], 500);
         }
     }
-
     /**
      * Display the specified resource.
      *
@@ -57,7 +42,10 @@ class CabinController extends Controller
     {
         $cabin = Cabin::findOrFail($id);
 
-        return view('cabin.show', $cabin);
+        $cabin->client;
+        $cabin->user;
+
+        return $cabin;
     }
 
     /**
