@@ -10,8 +10,8 @@
         position: relative;
         float: left;
         z-index: 2;
-        width: 42px;
-        height: 40px;
+        width: 84px;
+        height: 80px;
         cursor: pointer;
         border-radius: 2px;
     }
@@ -35,7 +35,7 @@
         border: 0;
     }
     
-    kdkal .selectable-grid-column:hover .selector {
+    .selectable-grid-column:hover .selector {
         opacity: 0.3;
     }
     
@@ -49,7 +49,31 @@
     
     .street {
         height: 100px;
-        width: 1350px;
-        background-image: url('img/Rua.png');
+        width: 100%;
+        background-color: grey;
+        // background-image: url('img/Rua.png');
         background-repeat: repeat-x;
     }
+    
+    .cabin {
+        position: relative;
+        float: left;
+        z-index: 2;
+        width: 85px;
+        height: 80px;
+        cursor: pointer;
+        border-radius: 2px;
+        margin: 0 0 2px 2px;
+        text-align: center;
+        color: black;
+    }
+    
+    .cabin.sold {
+        background-color: orangered;
+    }
+    
+    .cabin.avaiable {
+        background-color: green;
+    }
+    
+    ////////////////////////////////////////////////////////////////////////////////////////////

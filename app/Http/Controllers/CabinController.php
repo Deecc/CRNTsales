@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Cabin;
 
 class CabinController extends Controller
@@ -14,7 +15,7 @@ class CabinController extends Controller
      */
     public function index()
     {
-        $cabins = Cabin::all();
+        $cabins = Cabin::all()->sortBy('id')->values()->all();;
 
         return view('cabin.index', ['cabins' => $cabins]);
     }
@@ -32,6 +33,25 @@ class CabinController extends Controller
             return response(['message' => 'error!'], 500);
         }
     }
+
+    public function detachClient($id)
+    {
+        $cabin = Cabin::findOrFail($id);
+        $cabin->client_id = null;
+        $cabin->status = false;
+        $cabin->user_id = null;
+        if($cabin->save())
+        {
+            return response(['message' => 'sucessfull'], 200);
+        }
+        else
+        {
+            return response(['message' => 'error!'], 500);
+        }
+    }
+
+
+
     /**
      * Display the specified resource.
      *
@@ -44,6 +64,7 @@ class CabinController extends Controller
 
         $cabin->client;
         $cabin->user;
+        $cabin->id;
 
         return $cabin;
     }
@@ -95,5 +116,15 @@ class CabinController extends Controller
         } else {
             return response(['error' => ['code' => '500', 'message' => 'Failed to delete the cabin!']], 500);
         }
+    }
+
+    public function sale(Request $request) 
+    {
+        $cabin = Cabin::findOrFail($request->cabin_id);
+        $cabin->client_id = $request->client_id;
+        $cabin->user_id = Auth::user()->id;
+        $cabin->status = true;
+        $cabin->save();
+        return $cabin;
     }
 }

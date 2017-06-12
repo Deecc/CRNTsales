@@ -16,6 +16,8 @@ class CreateCabinsTable extends Migration
         Schema::create('cabins', function (Blueprint $table) {
             $table->increments('id');
             $table->string('position');
+            $table->boolean('status')->default(false);
+            $table->decimal('price',10,2)->nullable();
 
             $table->integer('client_id')->nullable()->unsigned()->index();
             $table->foreign('client_id')->references('id')->on('clients')->onDelete('cascade');

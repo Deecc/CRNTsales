@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Client;
+use App\Cabin;
 
 class HomeController extends Controller
 {
@@ -23,6 +25,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $clients = Client::all();
+        $cabins = Cabin::all()->sortBy('id')->values()->all();
+        
+        
+        //return $cabins;
+        return view('home', ['cabins' => $cabins, 'clients' => $clients]);
     }
 }

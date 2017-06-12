@@ -795,7 +795,7 @@ var app = new Vue({
 /* 9 */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed: ModuleBuildError: Module build failed: Error: spawn /home/vagrant/Code/carnatal_vendas/node_modules/optipng-bin/vendor/optipng ENOENT\n    at exports._errnoException (util.js:1018:11)\n    at Process.ChildProcess._handle.onexit (internal/child_process.js:193:32)\n    at onErrorNT (internal/child_process.js:367:16)\n    at _combinedTickCallback (internal/process/next_tick.js:80:11)\n    at process._tickCallback (internal/process/next_tick.js:104:9)\n    at runLoaders (/home/vagrant/Code/carnatal_vendas/node_modules/webpack/lib/NormalModule.js:192:19)\n    at /home/vagrant/Code/carnatal_vendas/node_modules/loader-runner/lib/LoaderRunner.js:364:11\n    at /home/vagrant/Code/carnatal_vendas/node_modules/loader-runner/lib/LoaderRunner.js:230:18\n    at context.callback (/home/vagrant/Code/carnatal_vendas/node_modules/loader-runner/lib/LoaderRunner.js:111:13)\n    at /home/vagrant/Code/carnatal_vendas/node_modules/img-loader/index.js:45:31");
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 /* 10 */

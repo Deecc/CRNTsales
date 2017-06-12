@@ -17,4 +17,6 @@ class Cabin extends Model
     {
         return $this->belongsTo('App\User');
     }
+
+   
 }

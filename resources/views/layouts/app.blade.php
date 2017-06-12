@@ -12,6 +12,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/select2.min.css') }}" rel="stylesheet">
     
     <!-- Scripts -->
     <script src="{{ asset('js/modernizr.js') }}"></script>
@@ -47,10 +48,9 @@
                         <!-- Authentication Links -->
                         @if (Auth::guest())
                             <li><a href="{{ route('login') }}">Entrar</a></li>
-                            <li><a href="{{ route('register') }}">Registrar</a></li>
                         @else
                             <li>
-                                <a href="#" role="button"> Início </a>
+                                <a href="{{ url('/home') }}" role="button"> Início </a>
                             </li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -59,7 +59,7 @@
 
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
-                                        <a href="#">
+                                        <a href="{{ route('web.clients.index') }}">
                                             Lista de Clientes
                                         </a>
                                     </li>
@@ -103,33 +103,17 @@
     </div>
 
     <!-- Scripts -->
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    {{-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> --}}
+    
     <script src="{{ asset('js/jquery-2.1.4.js') }}"></script>
-    <script src="{{ asset('js/app.js') }}"></script>    
-    <script src="{{ asset('js/jquery.menu-aim.js') }}"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/main.js') }}"></script> <!-- Resource jQuery -->
+    <script src="{{ asset('js/jquery.menu-aim.js') }}"></script>
     <script src="{{ asset('js/jquery.selectable-grid.js') }}"></script>
-
+    <script src="{{ asset('js/select2.min.js') }}"></script>
+    <script src="{{ asset('js/i18n/pt-BR.js') }}"></script>
+    
     @yield('script')
-
-	<script>
-        $(document).ready(function () {
-            var updateSelected = function () {
-                var text = [];
-                $('#camarote-grid').selectableGrid().selected().each(function (index, element) {
-                    text.push($(element).text().trim());
-                });
-
-                $('#camcarote-grid-selected').text('Selected items: ' + text.join(', '));
-            };
-            $('.selectable-grid-column').click(updateSelected);
-            updateSelected();            
-        });
-    </script>
-
-    
-   
-    
 </body>
 </html>

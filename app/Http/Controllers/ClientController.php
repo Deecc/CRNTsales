@@ -39,12 +39,9 @@ class ClientController extends Controller
     {
         $client = new Client;
         $client->fill($request->all());
-
-        if ($client->save()) {
-            return response($client, 201);
-        } else {
-            return response(['error' => ['code' => '500', 'message' => 'Failed to create a new client!']], 500);
-        }
+        $client->save();
+            
+        return redirect()->route('web.clients.index', ['clients' => Client::all()]);        
     }
 
     /**
@@ -101,11 +98,7 @@ class ClientController extends Controller
     public function destroy($id)
     {
         $client = Client::findOrFail($id);
-
-        if ($client->delete()) {
-            return response(true, 200);
-        } else {
-            return response(['error' => ['code' => '500', 'message' => 'Failed to delete the client!']], 500);
-        }
+        $client->delete();
+        return redirect()->route('web.clients.index', ['clients' => Client::all()]);        
     }
 }
