@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -11,11 +11,16 @@
     <title>{{ config('app.name', 'Vendas Carnatal') }}</title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    {{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous"> --}}
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">    
+    <link href="{{ asset('css/kontext.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/demo.css') }}" rel="stylesheet">
     <link href="{{ asset('css/select2.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/simplebar@2.4.1/dist/simplebar.css" />
+    
     
     <!-- Scripts -->
-    <script src="{{ asset('js/modernizr.js') }}"></script>
+    
 </head>
 <body>
     <div id="app">
@@ -33,7 +38,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Vendas Carnatal') }}
+                       <img src="img/carnatal-logo-pequeno.png"></img>
                     </a>
                 </div>
 
@@ -64,15 +69,11 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#">
-                                            Camarotes disponíveis
+                                        <a href="{{ route('web.cabins.index') }}">
+                                            Camarotes
                                         </a>
                                     </li>
-                                    <li>
-                                        <a href="#">
-                                            Camarotes vendidos
-                                        </a>
-                                    </li>
+                                    
                                 </ul>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -103,17 +104,24 @@
     </div>
 
     <!-- Scripts -->
-    {{-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> --}}
-    
-    <script src="{{ asset('js/jquery-2.1.4.js') }}"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="{{ asset('js/app.js') }}"></script>
-    <script src="{{ asset('js/main.js') }}"></script> <!-- Resource jQuery -->
-    <script src="{{ asset('js/jquery.menu-aim.js') }}"></script>
+    <script src="{{ asset('js/modernizr.js') }}"></script>
+    <script src="{{ asset('js/jquery-2.1.4.js') }}"></script> 
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     <script src="{{ asset('js/jquery.selectable-grid.js') }}"></script>
+    <script src="{{ asset('js/app.js') }}"></script>     
+    <script src="{{ asset('js/kontext.js') }}"></script>
     <script src="{{ asset('js/select2.min.js') }}"></script>
     <script src="{{ asset('js/i18n/pt-BR.js') }}"></script>
+    <script src="https://unpkg.com/simplebar@2.4.1/dist/simplebar.js"></script>
+    <script src="{{ asset('js/Chart.min.js') }}"></script>
+    
+    
     
     @yield('script')
+
+
+
 </body>
 </html>

@@ -2,18 +2,18 @@
 
 @section('content')
 
-<div class="container">
-    <form action="{{ route('web.clients.store') }}" method="post">
+<div class="container generalBg">
+    <form action="{{ route('web.clients.store') }}" method="post" class="form-group">
         {{ csrf_field() }}
         <label for="name">Nome:</label>
-        <input type="text" name="name" placeholder="Nome">
+        <input class="form-control" type="text" name="name" placeholder="Nome">
         <label for="phone">Telefone:</label>
-        <input type="text" name="phone" placeholder="Telefone">
+        <input class="form-control" type="text" name="phone" placeholder="Telefone">
         <label for="email">Email:</label>
-        <input type="text" name="email" placeholder="Email">
+        <input class="form-control" type="text" name="email" placeholder="Email">
         <label for="social_number">CPF:</label>
-        <input type="text" name="social_number" placeholder="CPF">
-        <input type="submit">
+        <input class="form-control" type="text" name="social_number" placeholder="CPF">
+        <input class="btn btn-primary" type="submit">
     </form>
 </div>
 

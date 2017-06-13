@@ -25,6 +25,8 @@ Route::get('/cabin/attach/', 'CabinController@attachClient');
 
 Route::get('/cabin/detach/{id}', 'CabinController@detachClient');
 
+Route::get('/cabin', 'CabinController@index')->name('web.cabins.index');
+
 Route::get('/cabin/sale', 'CabinController@sale')->name('web.cabins.sale');
 
 Route::get('/client', 'ClientController@index')->name('web.clients.index');
@@ -34,3 +36,4 @@ Route::get('/client/create', 'ClientController@create')->name('web.clients.creat
 Route::post('/client', 'ClientController@store')->name('web.clients.store');
 
 Route::get('/client/delete/{id}', 'ClientController@destroy')->name('web.clients.destroy');
+

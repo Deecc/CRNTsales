@@ -27,9 +27,9 @@ class HomeController extends Controller
     {
         $clients = Client::all();
         $cabins = Cabin::all()->sortBy('id')->values()->all();
-        
+        $n_cabins = Cabin::get()->count();
         
         //return $cabins;
-        return view('home', ['cabins' => $cabins, 'clients' => $clients]);
+        return view('home', ['cabins' => $cabins, 'clients' => $clients, 'n_cabins' => $n_cabins]);
     }
 }

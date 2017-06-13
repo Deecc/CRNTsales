@@ -2,12 +2,10 @@
 
 @section('content')
 
-<div class="container">
-    <div>
-        <a href="{{ route('web.clients.create') }}">Cadastrar cliente</a>
-    </div>
-    <table>
-        <thead>
+<div class="container generalBg">
+    
+    <table class="table table-responsive table-hover">
+        <thead class="thead-inverse">
             <tr>
                 <td>Nome</td>
                 <td>Telefone</td>
@@ -28,6 +26,14 @@
             @endforeach
         </tbody>
     </table>
+   <nav >
+        <ul class="pagination-lg justify-content-center">
+            {{ $clients->links() }}
+        </ul>
+   </nav>
+   <div>        
+        <a class="btn btn-primary btn-lg btn-block" href="{{ route('web.clients.create') }}"> Cadastrar cliente </a>
+    </div>
 </div>
 
 @endsection

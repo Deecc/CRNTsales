@@ -14,7 +14,7 @@ class ClientController extends Controller
      */
     public function index()
     {
-        $clients = Client::all();
+        $clients = Client::paginate(10);
 
         return view('client.index', ['clients' => $clients]);
     }
@@ -101,4 +101,6 @@ class ClientController extends Controller
         $client->delete();
         return redirect()->route('web.clients.index', ['clients' => Client::all()]);        
     }
+
+    
 }
