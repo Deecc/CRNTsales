@@ -20,10 +20,10 @@ class CreateCabinsTable extends Migration
             $table->decimal('price',10,2)->nullable();
 
             $table->integer('client_id')->nullable()->unsigned()->index();
-            $table->foreign('client_id')->references('id')->on('clients')->onDelete('cascade');
+            $table->foreign('client_id')->references('id')->on('clients');
 
             $table->integer('user_id')->nullable()->unsigned()->index();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

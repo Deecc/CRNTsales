@@ -38,7 +38,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                       <img src="img/carnatal-logo-pequeno.png"></img>
+                       <img src="{{ asset('img/carnatal-logo-pequeno.png') }}"></img>
                     </a>
                 </div>
 
@@ -58,11 +58,11 @@
                                 <a href="{{ url('/home') }}" role="button"> Início </a>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                <a id="d" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     Relatórios <span class="caret"></span>
                                 </a>
 
-                                <ul class="dropdown-menu" role="menu">
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="d">
                                     <li>
                                         <a href="{{ route('web.clients.index') }}">
                                             Lista de Clientes
@@ -75,6 +75,7 @@
                                     </li>
                                     
                                 </ul>
+                            </li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     {{ Auth::user()->name }} <span class="caret"></span>
@@ -104,24 +105,17 @@
     </div>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/modernizr.js') }}"></script>
     <script src="{{ asset('js/jquery-2.1.4.js') }}"></script> 
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script src="{{ asset('js/modernizr.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script> 
     <script src="{{ asset('js/jquery.selectable-grid.js') }}"></script>
-    <script src="{{ asset('js/app.js') }}"></script>     
     <script src="{{ asset('js/kontext.js') }}"></script>
     <script src="{{ asset('js/select2.min.js') }}"></script>
     <script src="{{ asset('js/i18n/pt-BR.js') }}"></script>
     <script src="https://unpkg.com/simplebar@2.4.1/dist/simplebar.js"></script>
     <script src="{{ asset('js/Chart.min.js') }}"></script>
     
-    
-    
     @yield('script')
-
-
 
 </body>
 </html>

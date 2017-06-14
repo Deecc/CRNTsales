@@ -35,5 +35,9 @@ Route::get('/client/create', 'ClientController@create')->name('web.clients.creat
 
 Route::post('/client', 'ClientController@store')->name('web.clients.store');
 
+Route::get('/client/edit/{id}', 'ClientController@edit')->name('web.clients.edit');
+
+Route::post('/client/{id}', 'ClientController@update')->name('web.clients.update');
+
 Route::get('/client/delete/{id}', 'ClientController@destroy')->name('web.clients.destroy');
 

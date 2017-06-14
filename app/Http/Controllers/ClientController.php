@@ -67,7 +67,7 @@ class ClientController extends Controller
     {
         $client = Client::findOrFail($id);
 
-        return view('client.edit', $client);
+        return view('client.edit', ['client'=>$client]);
     }
 
     /**
@@ -83,7 +83,7 @@ class ClientController extends Controller
         $client->fill($request->all());
 
         if ($client->save()) {
-            return response($client, 201);
+            return redirect()->route('web.clients.index', ['clients' => Client::all()]);        
         } else {
             return response(['error' => ['code' => '500', 'message' => 'Failed to update the client!']], 500);
         }

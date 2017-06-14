@@ -17,7 +17,7 @@ class CabinController extends Controller
     {
         $cabins = Cabin::all()->sortBy('id')->values()->all();;
 
-        return view('cabin.index', ['cabins' => $cabins]);
+        return view('cabin.index', ['cabins' => $cabins, 'solds' => Cabin::where('status', true)->get()->count(), 'avaiable' => Cabin::where('status', false)->get()->count() ]);
     }
 
     public function attachClient(Request $request)

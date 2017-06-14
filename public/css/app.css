@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Ubuntu);@charset "UTF-8";
 
 body {
-  background: url("/img/carnatal-bg.jpg");
+  background: url("/img/bg-gray-23.jpg");
 }
 
 .generalBg {
@@ -59,9 +59,88 @@ body {
   margin: 1px;
 }
 
+.content {
+  width: 100%;
+}
+
+.inicial {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.particularA {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 200px;
+  width: 100%;
+  margin: 5px;
+}
+
+.particularB {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 200px;
+  width: 100%;
+  margin: 5px;
+}
+
+.particularC {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 200px;
+  width: 100%;
+  margin: 5px;
+}
+
 .cabinBg {
-  background: url("/img/carnatal-bg-trans.png");
-  border-radius: 25px;
+  background: url("/img/bg-pink.jpg");
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
   color: #666;
 }
 
@@ -72,27 +151,74 @@ body {
   width: 85px;
   height: 80px;
   cursor: pointer;
-  border-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
   margin: 0 0 2px 2px;
   text-align: center;
   color: black;
 }
 
-.cabin.sold {
-  background-color: #cccccc;
+.cabin.soldA {
+  background: url("/img/AvaiableA.svg") no-repeat;
+  opacity: 0.3;
+}
+
+.cabin.soldB {
+  background: url("/img/AvaiableB.svg") no-repeat;
+  opacity: 0.3;
+}
+
+.cabin.soldC {
+  background: url("/img/AvaiableC.svg") no-repeat;
   opacity: 0.3;
 }
 
 .cabin.avaiableA {
-  background-color: yellow;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 80px;
+  width: 85px;
+  background: url("/img/AvaiableA.svg") no-repeat;
 }
 
 .cabin.avaiableB {
-  background-color: red;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 80px;
+  width: 85px;
+  background: url("/img/AvaiableB.svg") no-repeat;
 }
 
 .cabin.avaiableC {
-  background-color: green;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 80px;
+  width: 85px;
+  background: url("/img/AvaiableC.svg") no-repeat;
 }
 
 .carnatalLogo {
@@ -109,8 +235,12 @@ body {
 }
 
 .pagination {
-  text-align: center;
-  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 /*!

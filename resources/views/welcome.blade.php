@@ -76,14 +76,12 @@
                 </div>
             @endif
 
-            <div class="content">
-                <div class="title m-b-md ">
-                    Camarotes individuais
+            <div class="content" style="width: 100%">
+                <div>
+                    <img src="img/Welcome-img.svg" style="width: 60%;"></img>
                 </div>
-
                 <div class="links">
-                    <a href="{{ url('/login') }}">Acessar</a>
-                    
+                    <a href="{{ url('/login') }}">Acessar</a>  
                 </div>
             </div>
         </div>

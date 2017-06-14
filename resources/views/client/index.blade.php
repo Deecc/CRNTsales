@@ -3,7 +3,9 @@
 @section('content')
 
 <div class="container generalBg">
-    
+    <div>        
+        <a class="btn btn-primary btn-lg btn-block" href="{{ route('web.clients.create') }}"> Cadastrar cliente </a>
+    </div>
     <table class="table table-responsive table-hover">
         <thead class="thead-inverse">
             <tr>
@@ -21,7 +23,7 @@
                 <td>{{ $client->phone }}</td>
                 <td>{{ $client->email }}</td>            
                 <td>{{ $client->social_number }}</td>
-                <td><a href="{{ route('web.clients.destroy', $client->id) }}">Excluir</a></td>
+                <td><a href="{{ route('web.clients.edit', $client->id) }}">Editar</a> | <a href="{{ route('web.clients.destroy', $client->id) }}">Excluir</a></td>
             </tr>
             @endforeach
         </tbody>
@@ -31,9 +33,7 @@
             {{ $clients->links() }}
         </ul>
    </nav>
-   <div>        
-        <a class="btn btn-primary btn-lg btn-block" href="{{ route('web.clients.create') }}"> Cadastrar cliente </a>
-    </div>
+   
 </div>
 
 @endsection

@@ -13,7 +13,11 @@
         <input class="form-control" type="text" name="email" placeholder="Email">
         <label for="social_number">CPF:</label>
         <input class="form-control" type="text" name="social_number" placeholder="CPF">
-        <input class="btn btn-primary" type="submit">
+        </br>
+        <div class="pull-right">
+            <input class="btn btn-primary " type="submit">
+            <a class="btn btn-primary" href="{{ route('web.clients.index')}}">Cancelar</a>
+        </div>
     </form>
 </div>
 

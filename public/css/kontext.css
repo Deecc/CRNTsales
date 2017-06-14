@@ -23,6 +23,7 @@
 
 .kontext .layer.show {
     visibility: visible;
+    background-image: url('/img/bg-party.jpg');
 }
 
 .kontext.capable {

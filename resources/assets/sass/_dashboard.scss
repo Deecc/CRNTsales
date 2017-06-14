@@ -1,5 +1,5 @@
 body {
-    background: url('/img/carnatal-bg.jpg');
+    background: url('/img/bg-gray-23.jpg');
 }
 
 .generalBg {
@@ -60,9 +60,56 @@ body {
 }
 
 /////////////////////////////////////////////////////////////////////////////
+.content {
+    width: 100%;
+}
+
+.inicial {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    // background-image: url('/img/Welcome-img.svg') no-repeat;
+}
+
+.particularA {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    width: 100%;
+    margin: 5px;
+    // background-image: url('/img/CamaroteA.svg') no-repeat;
+}
+
+.particularB {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    width: 100%;
+    margin: 5px;
+    // background-image: url('/img/CamaroteB.svg') no-repeat;
+}
+
+.particularC {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    width: 100%;
+    margin: 5px;
+    // background-image: url('/img/CamaroteC.svg') no-repeat;
+}
+
 .cabinBg {
-    background: url('/img/carnatal-bg-trans.png');
-    border-radius: 25px;
+    background: url('/img/bg-pink.jpg');
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     color: #666;
 }
 
@@ -73,27 +120,53 @@ body {
     width: 85px;
     height: 80px;
     cursor: pointer;
-    border-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     margin: 0 0 2px 2px;
     text-align: center;
     color: black;
 }
 
-.cabin.sold {
-    background-color: #cccccc;
+.cabin.soldA {
+    background: url('/img/AvaiableA.svg') no-repeat;
+    opacity: 0.3;
+}
+
+.cabin.soldB {
+    background: url('/img/AvaiableB.svg') no-repeat;
+    opacity: 0.3;
+}
+
+.cabin.soldC {
+    background: url('/img/AvaiableC.svg') no-repeat;
     opacity: 0.3;
 }
 
 .cabin.avaiableA {
-    background-color: yellow;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 80px;
+    width: 85px;
+    background: url('/img/AvaiableA.svg') no-repeat;
 }
 
 .cabin.avaiableB {
-    background-color: red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 80px;
+    width: 85px;
+    background: url('/img/AvaiableB.svg') no-repeat;
 }
 
 .cabin.avaiableC {
-    background-color: green;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 80px;
+    width: 85px;
+    background: url('/img/AvaiableC.svg') no-repeat;
 }
 
 .carnatalLogo {
@@ -110,8 +183,8 @@ body {
 }
 
 .pagination {
-    text-align: center;
-    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
