@@ -4,7 +4,7 @@
 
 <div class="container generalBg" >
     <div style="position: relative;">
-        <canvas id="cabinsChart" width="500" height="500"></canvas>
+        <canvas id="cabinsChart" width="400" height="400"></canvas>
     </div>
 </div>
 
