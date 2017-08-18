@@ -3,7 +3,9 @@
 @section('content')
 
 <div class="container generalBg">
-    <form action="{{ route('web.clients.store') }}" method="post" class="form-group">
+
+   
+        <form action="{{ route('web.clients.store') }}" method="post" class="form-group">
         {{ csrf_field() }}
         <label for="name">Nome:</label>
         <input class="form-control" type="text" name="name" placeholder="Nome">
@@ -18,7 +20,9 @@
             <input class="btn btn-primary " type="submit">
             <a class="btn btn-primary" href="{{ route('web.clients.index')}}">Cancelar</a>
         </div>
-    </form>
+    </form>           
+  
+    
 </div>
 
 @endsection

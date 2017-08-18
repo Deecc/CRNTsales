@@ -17,27 +17,33 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::group(['middleware' => ['auth']], function () {
 
-Route::get('/cabin/show/{id}', 'CabinController@show');
+    Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/cabin/attach/', 'CabinController@attachClient');
+    Route::get('/cabin/show/{id}', 'CabinController@show');
 
-Route::get('/cabin/detach/{id}', 'CabinController@detachClient');
+    Route::get('/cabin/attach/', 'CabinController@attachClient');
 
-Route::get('/cabin', 'CabinController@index')->name('web.cabins.index');
+    Route::get('/cabin/detach/{id}', 'CabinController@detachClient');
 
-Route::get('/cabin/sale', 'CabinController@sale')->name('web.cabins.sale');
+    Route::get('/cabin', 'CabinController@index')->name('web.cabins.index');
 
-Route::get('/client', 'ClientController@index')->name('web.clients.index');
+    Route::get('/cabin/sale', 'CabinController@sale')->name('web.cabins.sale');
+
+    Route::get('/client', 'ClientController@index')->name('web.clients.index'); 
+
+    Route::post('/client', 'ClientController@store')->name('web.clients.store');    
+
+    Route::get('/client/edit/{id}', 'ClientController@edit')->name('web.clients.edit');
+
+    Route::post('/client/{id}', 'ClientController@update')->name('web.clients.update');
+
+    Route::get('/client/delete/{id}', 'ClientController@destroy')->name('web.clients.destroy');
+
+});
+
+Route::post('/client/createLP', 'ClientController@storeFromLP')->name('web.clients.storeFromLP');
 
 Route::get('/client/create', 'ClientController@create')->name('web.clients.create');
-
-Route::post('/client', 'ClientController@store')->name('web.clients.store');
-
-Route::get('/client/edit/{id}', 'ClientController@edit')->name('web.clients.edit');
-
-Route::post('/client/{id}', 'ClientController@update')->name('web.clients.update');
-
-Route::get('/client/delete/{id}', 'ClientController@destroy')->name('web.clients.destroy');
 

@@ -33,6 +33,7 @@
             {{ $clients->links() }}
         </ul>
    </nav>
+
    
 </div>
 

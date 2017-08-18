@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Client;
 
 class ClientController extends Controller
@@ -26,8 +27,13 @@ class ClientController extends Controller
      */
     public function create()
     {
-        return view('client.create');
+        if (Auth::check())
+            return view('client.create');
+        else
+            return view('client.createLP');
     }
+
+    
 
     /**
      * Store a newly created resource in storage.
@@ -40,9 +46,21 @@ class ClientController extends Controller
         $client = new Client;
         $client->fill($request->all());
         $client->save();
-            
+
         return redirect()->route('web.clients.index', ['clients' => Client::all()]);        
+        
     }
+
+    public function storeFromLP(Request $request)
+    {
+        $client = new Client;
+        $client->fill($request->all());
+        $client->save();
+
+        return redirect()->back()->with('message', 'Obrigado por registrar seu interesse!');
+        
+    }
+    
 
     /**
      * Display the specified resource.
