@@ -31,9 +31,7 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('/cabin/sale', 'CabinController@sale')->name('web.cabins.sale');
 
-    Route::get('/client', 'ClientController@index')->name('web.clients.index'); 
-
-    Route::post('/client', 'ClientController@store')->name('web.clients.store');    
+    Route::get('/client', 'ClientController@index')->name('web.clients.index');    
 
     Route::get('/client/edit/{id}', 'ClientController@edit')->name('web.clients.edit');
 
@@ -43,7 +41,10 @@ Route::group(['middleware' => ['auth']], function () {
 
 });
 
-Route::post('/client/createLP', 'ClientController@storeFromLP')->name('web.clients.storeFromLP');
+// Route::post('/client/createLP', 'ClientController@storeFromLP')->name('web.clients.storeFromLP');
 
 Route::get('/client/create', 'ClientController@create')->name('web.clients.create');
+
+Route::post('/client', 'ClientController@store')->name('web.clients.store');    
+
 

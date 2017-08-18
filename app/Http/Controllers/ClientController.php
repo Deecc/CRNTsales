@@ -27,10 +27,9 @@ class ClientController extends Controller
      */
     public function create()
     {
-        if (Auth::check())
-            return view('client.create');
-        else
-            return view('client.createLP');
+        
+        return view('client.create');
+        
     }
 
     
@@ -47,19 +46,21 @@ class ClientController extends Controller
         $client->fill($request->all());
         $client->save();
 
-        return redirect()->route('web.clients.index', ['clients' => Client::all()]);        
-        
+        if (Auth::check())
+            return redirect()->route('web.clients.index', ['clients' => Client::all()]);
+        else        
+            return view ('client.registrado');
     }
 
-    public function storeFromLP(Request $request)
-    {
-        $client = new Client;
-        $client->fill($request->all());
-        $client->save();
+    // public function storeFromLP(Request $request)
+    // {
+    //     $client = new Client;
+    //     $client->fill($request->all());
+    //     $client->save();
 
-        return redirect()->back()->with('message', 'Obrigado por registrar seu interesse!');
+    //     return redirect()->back()->with('message', 'Obrigado por registrar seu interesse!');
         
-    }
+    // }
     
 
     /**

@@ -4,7 +4,12 @@
 
 <div class="container generalBg">
 
-    <h3>Bem vindo, complete o cadastro para registrar seu interesse em reservar um camarote.</h3>
+    <h3>Registro completado com sucesso!</h3>
+    
+    <p> Voce será redirecionado para o site do camarotes em 10 segundos.. <p>
+    <progress value="0" max="10" id="progressBar"></progress>
+    <p> ou clique aqui para ir direto: <a href="http://camarotes.carnatal.com.br">Camarotes</a>
+    {{-- <h3>Bem vindo, complete o cadastro para registrar seu interesse em reservar um camarote.</h3>
         <form id="fromLP" action="{{ route('web.clients.storeFromLP') }}" method="post" class="form-group">
             {{ csrf_field() }}
             <label for="name">Nome:</label>
@@ -27,9 +32,20 @@
                 {{ session()->get('message') }}
             </div>
         @endif                      
-   
+    --}}
 
 </div>
 
 @endsection
 
+@section('script')
+<script>
+var timeleft = 10;
+var downloadTimer = setInterval(function(){
+  document.getElementById("progressBar").value = 10 - --timeleft;
+  if(timeleft <= 0)
+    clearInterval(downloadTimer);
+    window.location = "http://camarotes.carnatal.com.br";
+},1000);
+</script>
+@endsection
