@@ -41,8 +41,6 @@ Route::group(['middleware' => ['auth'],], function () {
 
 });
 
-// Route::post('/client/createLP', 'ClientController@storeFromLP')->name('web.clients.storeFromLP');
-
 Route::get('/client/create', 'ClientController@create')->name('web.clients.create');
 
 Route::post('/client', 'ClientController@store')->name('web.clients.store');    
