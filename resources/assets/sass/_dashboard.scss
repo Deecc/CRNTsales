@@ -1,5 +1,10 @@
 body {
     background: url('/img/bg-gray-23.jpg');
+    //background: url('/img/Tela-de-vendas.png') no-repeat;
+}
+
+.bgWelcome {
+    background: url('/img/Tela-de-vendas.png');
 }
 
 .generalBg {
@@ -170,12 +175,12 @@ body {
 }
 
 .carnatalLogo {
-    background: url('/img/carnatal-logo.png');
+    background: url('/img/logo-camarotes.png');
 }
 
 .street {
     height: 100px;
-    width: 2700px;
+    width: 3780px;
     background-color: grey;
     background-image: url('/img/Rua.png');
     background-repeat: repeat-x;

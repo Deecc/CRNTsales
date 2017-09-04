@@ -13,10 +13,11 @@
         <!-- Styles -->
         <style>
             html, body {
-                background: url('img/bg.png');
+                background: url('img/Tela-de-vendas-fullhd.png') no-repeat;
                 color: #636b6f;
                 font-family: 'Raleway', sans-serif;
                 font-weight: 100;
+                width: 100%;
                 height: 100vh;
                 margin: 0;
             }
@@ -64,7 +65,7 @@
             }
         </style>
     </head>
-    <body>
+    <body >
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
@@ -76,14 +77,16 @@
                 </div>
             @endif
 
-            <div class="content" style="width: 100%">
+            <a href="{{ url('/login') }}"><img src="img/botao.png"></img></a>
+
+            {{--  <div class="content" style="width: 100%">
                 <div>
-                    <img src="img/Welcome-img.svg" style="width: 60%;"></img>
+                    <div class="links">
+                        <a href="{{ url('/login') }}"><img src="img/botao.png"></img></a>  
+                    </div>
                 </div>
-                <div class="links">
-                    <a href="{{ url('/login') }}">Acessar</a>  
-                </div>
-            </div>
+                
+            </div>  --}}
         </div>
     </body>
 </html>

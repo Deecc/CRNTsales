@@ -11,20 +11,26 @@ class CabinTableSeeder extends Seeder
      */
     public function run()
     {
-        for ($i=1; $i <= 60; $i++) { 
+        for ($i=1; $i <= 41; $i++) { 
             DB::table('cabins')->insert([
-                'position' => 'A'.$i,
+                'position' => 'A'.$i.':A',
+            ]);
+            DB::table('cabins')->insert([
+                'position' => 'A'.$i.':B',
             ]);
         }   
-        for ($i=1; $i <= 60; $i++) { 
+        for ($i=1; $i <= 33; $i++) { 
             DB::table('cabins')->insert([
-                'position' => 'B'.$i,
+                'position' => 'A'.$i.':A',
+            ]);
+            DB::table('cabins')->insert([
+                'position' => 'A'.$i.':B',
             ]);
         }   
-        for ($i=1; $i <= 30; $i++) { 
-            DB::table('cabins')->insert([
-                'position' => 'C'.$i,
-            ]);
-        }        
+        // for ($i=1; $i <= 30; $i++) { 
+        //     DB::table('cabins')->insert([
+        //         'position' => 'C'.$i,
+        //     ]);
+        // }        
     }
 }

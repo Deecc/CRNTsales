@@ -38,7 +38,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                       <img src="{{ asset('img/carnatal-logo-pequeno.png') }}"></img>
+                       <img src="{{ asset('img/logo-camarotes.png') }}"></img>
                     </a>
                 </div>
 

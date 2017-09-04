@@ -4,6 +4,10 @@ body {
   background: url("/img/bg-gray-23.jpg");
 }
 
+.bgWelcome {
+  background: url("/img/Tela-de-vendas.png");
+}
+
 .generalBg {
   padding: 10px;
   color: #666;
@@ -222,12 +226,12 @@ body {
 }
 
 .carnatalLogo {
-  background: url("/img/carnatal-logo.png");
+  background: url("/img/logo-camarotes.png");
 }
 
 .street {
   height: 100px;
-  width: 2700px;
+  width: 3780px;
   background-color: grey;
   background-image: url("/img/Rua.png");
   background-repeat: repeat-x;
@@ -5383,7 +5387,7 @@ tbody.collapse.in {
 }
 
 .navbar-default {
-  background-color: #fff;
+  background-color: #C1C0BE;
   border-color: #090909;
 }
 
@@ -5411,7 +5415,7 @@ tbody.collapse.in {
 
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
   color: #555;
-  background-color: #eeeeee;
+  background-color: #b1b0ad;
 }
 
 .navbar-default .navbar-nav > .disabled > a, .navbar-default .navbar-nav > .disabled > a:hover, .navbar-default .navbar-nav > .disabled > a:focus {
@@ -5437,7 +5441,7 @@ tbody.collapse.in {
 }
 
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
-  background-color: #eeeeee;
+  background-color: #b1b0ad;
   color: #555;
 }
 
@@ -5451,7 +5455,7 @@ tbody.collapse.in {
   }
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
     color: #555;
-    background-color: #eeeeee;
+    background-color: #b1b0ad;
   }
   .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a, .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:focus {
     color: #ccc;
