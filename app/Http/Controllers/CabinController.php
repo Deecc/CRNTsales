@@ -15,7 +15,7 @@ class CabinController extends Controller
      */
     public function index()
     {
-        $cabins = Cabin::all()->sortBy('id')->values()->all();;
+        $cabins = Cabin::all()->sortBy('id')->values()->all();
 
         return view('cabin.index', ['cabins' => $cabins, 'solds' => Cabin::where('status', true)->get()->count(), 'avaiable' => Cabin::where('status', false)->get()->count() ]);
     }

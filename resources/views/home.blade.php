@@ -15,7 +15,7 @@
 						<select id="select-client" type="text" style="width: 100%;" value="-1">
 							<option value=""></option>
 								@foreach($clients as $client)
-								<option value="{{ $client->id }}">{{ $client->name }}</option>
+								<option value="{{ $client->id }}">{{ $client->name  }} | CPF: {{ $client->social_number  }}  </option>
 								@endforeach
 								
 						</select>
@@ -28,7 +28,7 @@
 						
 					</div>
 					<div id="hasClient">
-						<p>Camarote vendido para o cliente: <span id="cabin-client"></span></p> 
+						<p>Camarote vendido para o cliente: <span id="cabin-client"></span>, portador do CPF <span id="cabin-client-cpf"></span>.</p> 
 					</div>
 				</div>
 				<div class="modal-footer">
@@ -204,6 +204,7 @@ $('.cabin').click(function() {
 				$('#hasClient').css("display", "block")
 				$('#noClient').css("display", "none")
 				$('#cabin-client').html(cabin.client.name)
+				$('#cabin-client-cpf').html(cabin.client.social_number)
 											
 			}
 			else

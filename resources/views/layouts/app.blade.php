@@ -114,6 +114,7 @@
     <script src="{{ asset('js/i18n/pt-BR.js') }}"></script>
     <script src="https://unpkg.com/simplebar@2.4.1/dist/simplebar.js"></script>
     <script src="{{ asset('js/Chart.min.js') }}"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.js"></script>
     
     @yield('script')
 

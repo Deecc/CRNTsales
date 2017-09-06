@@ -9,11 +9,12 @@
     <table class="table table-responsive table-hover">
         <thead class="thead-inverse">
             <tr>
-                <td>Nome</td>
-                <td>Telefone</td>
-                <td>Email</td>
-                <td>CPF</td>
-                <td>Ações</td>
+                <td><strong>NOME</strong></td>
+                <td><strong>TELEFONE</strong></td>
+                <td><strong>EMAIL</strong></td>
+                <td><strong>CPF</strong></td>                
+                <td><strong>ORIGEM</strong></td>
+                <td><strong>AÇÕES</strong></td>
             </tr>
         </thead>
         <tbody>
@@ -23,6 +24,7 @@
                 <td>{{ $client->phone }}</td>
                 <td>{{ $client->email }}</td>            
                 <td>{{ $client->social_number }}</td>
+                <td>{{ $client->origin ? 'Site' : 'Vendas'}}</td>
                 <td><a href="{{ route('web.clients.edit', $client->id) }}">Editar</a> | <a href="{{ route('web.clients.destroy', $client->id) }}">Excluir</a></td>
             </tr>
             @endforeach

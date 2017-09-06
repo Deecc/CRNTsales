@@ -18,7 +18,8 @@ class CreateClientsTable extends Migration
             $table->string('name');
             $table->string('email', 128);
             $table->string('phone');
-            $table->string('social_number', 11);
+            $table->string('social_number', 14);
+            $table->boolean('origin')->default(false);
         }); 
     }
 

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Foundation\Http\FormRequest;
+use App\Http\Requests\ClientRequest;
 use App\Client;
 
 class ClientController extends Controller
@@ -16,10 +16,13 @@ class ClientController extends Controller
      */
     public function index()
     {
-        $clients = Client::paginate(10);
+
+        $clients = Client::orderBy('origin')->orderBy('name', 'ASC')->paginate(10);
 
         return view('client.index', ['clients' => $clients]);
     }
+
+    
 
     /**
      * Show the form for creating a new resource.
@@ -44,13 +47,16 @@ class ClientController extends Controller
     public function store(ClientRequest $request)
     {
 
-        $client = new Client;
-        $client->fill($request->all());
-        $client->save();
-
-        if (Auth::check())
+        if (Auth::check()) {
+            $client = new Client;
+            $client->fill($request->all());
+            $client->save();
             return redirect()->route('web.clients.index', ['clients' => Client::all()]);
-        else        
+        }
+            $client = new Client;
+            $client->fill($request->all());
+            $client->origin = true;
+            $client->save();        
             return view ('client.registrado');
     }
 
