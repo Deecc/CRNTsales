@@ -1,11 +1,8 @@
-<svg id="Camada_3" data-name="Camada 3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 385">
-<title>CamaroteA</title>
-<path d="M506.18,223.5q-48.08,38.11-97.58,79.66-48.3,40.6-93.51,80.85Q258,336.59,196.17,288.89c-29.48-22.69-52.54-44.47-81.31-65.39.56-11.35,9.44-21.4,9.44-32.1H495.08Z" style="fill:#fcee21"/>
-<polygon points="506.18 223.68 115.42 223.68 128.74 175.25 488.42 175.25 506.18 223.68" style="fill:#ead850"/>
-<rect y="0.01" width="640" height="200.68" rx="1.93" ry="1.93" style="fill:#fcee21"/>
-<text 
-    transform="translate(165.06 73.27) scale(0.96 1)" 
-    style="font-size:75.2548828125px;font-family:Tahoma, Tahoma">
-    Camarote<tspan x="187.4" y="0" >
-    </tspan>
-    <tspan x="4.35" y="90.31">particular</tspan></text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 288.26 182.2"><title>CamaroteA</title>
+<g id="Camada_2" data-name="Camada 2">
+<g id="Camada_1-2" data-name="Camada 1">
+<path d="M276,90.42Q243.51,112.21,210.07,136q-32.64,23.22-63.18,46.23-38.55-27.11-80.35-54.39c-19.92-13-35.5-25.43-54.94-37.39,0-6.12-4.12-12.24-4.12-18.36H276Z" style="fill:#81379b"/>
+<rect x="6" y="67.02" width="275" height="24" rx="12" ry="12" style="fill:#66559b"/>
+<rect width="288.26" height="87.02" rx="12" ry="12" style="fill:#81379b"/>
+<text transform="translate(71.37 33.98)" style="font-size:32px;font-family:Tahoma, Tahoma">Camarote<tspan x="76" y="10" ></tspan>
+<tspan x="1.89" y="39.16">particular</tspan></text></g></g></svg>

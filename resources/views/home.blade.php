@@ -97,7 +97,7 @@
 				@for($i=82;$i<=148;$i+=4)
 					<div class="col-lg-12">
 						<div class="row">
-							<img src="img/Ativo3.png" height="100" width="180" class="col"> </img>
+							<img src="img/Ativo3.svg" height="100" width="180" class="col"> </img>
 						</div>
 						<div class="row">
 							<div class="col">
@@ -284,7 +284,7 @@ $('#removeClient').click(function() {
 				if( event.keyCode === 37 ) k.prev();
 				if( event.keyCode === 39 ) k.next();
 			}, false );
-			var touchX = 0;
+			{{--  var touchX = 0;
 			var touchConsumed = false;
 			document.addEventListener( 'touchstart', function( event ) {
 				touchConsumed = false;
@@ -302,7 +302,7 @@ $('#removeClient').click(function() {
 						touchConsumed = true;
 					}
 				}
-			}, false );
+			}, false );  --}}
 </script>
 
 @endsection

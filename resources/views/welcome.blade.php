@@ -13,13 +13,16 @@
         <!-- Styles -->
         <style>
             html, body {
-                background: url('img/Tela-de-vendas-fullhd.png') no-repeat;
+                background: url('img/Tela-de-vendas.png') no-repeat center center fixed;
                 color: #636b6f;
                 font-family: 'Raleway', sans-serif;
                 font-weight: 100;
-                width: 100%;
                 height: 100vh;
                 margin: 0;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
             }
 
             .full-height {
@@ -66,7 +69,8 @@
         </style>
     </head>
     <body >
-        <div class="flex-center position-ref full-height">
+
+       <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
                     @if (Auth::check())
@@ -75,11 +79,9 @@
                         <a href="{{ url('/login') }}">Acesso</a>
                     @endif
                 </div>
-            @endif
+            @endif 
 
-            <a href="{{ url('/login') }}"><img src="img/botao.png"></img></a>
-
-            {{--  <div class="content" style="width: 100%">
+             {{--  <div class="content" style="width: 100%">
                 <div>
                     <div class="links">
                         <a href="{{ url('/login') }}"><img src="img/botao.png"></img></a>  
@@ -87,6 +89,14 @@
                 </div>
                 
             </div>  --}}
+
+        <div class="content">
+            <div style="position:absolute;left:0;right:0;margin:0 auto;top:50%;transform:TranslateY(-50%);">
+                <img src="img/Camarotes_marca.png"></img>
+            </div>
+            <div style="position:absolute;left:0;right:0;margin:0 auto;top:70%;transform:TranslateY(-70%);">
+                <a href="{{ url('/login') }}"><img src="img/bt_acesso.png"></img></a>  
+            </div>
         </div>
     </body>
 </html>
