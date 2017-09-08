@@ -47,6 +47,7 @@
     </form>           
     @else
     <h3>Bem vindo, complete o cadastro para registrar seu interesse em reservar um camarote.</h3>
+    <h4>A reserva será efetivada após o contato da central de vendas com você.</h4>
          <form id="fromLP" action="{{ route('web.clients.store') }}" method="post" class="form-group">
         {{ csrf_field() }}
         <label for="name">Nome:</label>
@@ -95,6 +96,12 @@
 
 @section('script')
 <script>
+
+$("#enter").css("display", "none")
+
+@if (Auth::guest())
+    $("#logoCamarotes").attr("href", "http://vendas.carnatal.app/client/create")
+@endif
 
 var $Cpf = $("#cpf");
 $Cpf.mask('000.000.000-00', {reverse: false});

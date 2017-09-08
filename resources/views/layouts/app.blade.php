@@ -37,7 +37,7 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
+                    <a id="logoCamarotes" class="navbar-brand" href="{{ url('/') }}">
                        <img src="{{ asset('img/logo-camarotes.png') }}"></img>
                     </a>
                 </div>
@@ -52,7 +52,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @if (Auth::guest())
-                            <li><a href="{{ route('login') }}">Entrar</a></li>
+                            <li><a id="enter" href="{{ route('login') }}">Entrar</a></li>
                         @else
                             <li>
                                 <a href="{{ url('/home') }}" role="button"> Início </a>
