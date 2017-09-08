@@ -100,7 +100,7 @@
 $("#enter").css("display", "none")
 
 @if (Auth::guest())
-    $("#logoCamarotes").attr("href", "http://vendas.carnatal.app/client/create")
+    $("#logoCamarotes").attr("href", "https://vendas.camarotescarnatal.com/client/create")
 @endif
 
 var $Cpf = $("#cpf");
