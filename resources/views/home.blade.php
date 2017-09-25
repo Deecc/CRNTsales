@@ -47,16 +47,28 @@
 		</div>
 		<div class="cabinBg" data-simplebar>
 			<div id="" class="selectable-grid" data-multiple="true" style="display: flex;">
-				@for($i=0;$i<=81;$i+=4)
+				@for($i=0;$i<=73;$i+=4)
 					<div class="col-lg-12">
 						<div class="row">
+						@if ($cabins[$i]->id <= 32 )
 							<img src="img/Ativo4.svg" height="100" width="180" class="col"> </img>
+						@else
+							<img src="img/Ativo5.svg" height="100" width="180" class="col"> </img>
+						@endif
 						</div>
 						<div class="row">
 							<div class="col">
-								<a href="#cabin-modal" data-toggle="modal" data-cabin-id="{{ $cabins[$i]->id }}" class="cabin {{ $cabins[$i]->status ? 'soldA' : 'avaiableA'  }} "><span>{{ $cabins[$i]->position }}</span></a>
-								@if($i+2 < 81)
-								<a href="#cabin-modal" data-toggle="modal" data-cabin-id="{{ $cabins[$i + 2]->id }}" class="cabin {{ $cabins[$i + 2]->status ? 'soldA' : 'avaiableA'  }}"><span>{{ $cabins[$i+2]->position }}</span></a>
+								@if ($cabins[$i]->id <= 30 )
+									<a href="#cabin-modal" data-toggle="modal" data-cabin-id="{{ $cabins[$i]->id }}" class="cabin {{ $cabins[$i]->status ? 'soldA' : 'avaiableA'  }} "><span>{{ $cabins[$i]->position }}</span></a>
+								@else
+									<a href="#cabin-modal" data-toggle="modal" data-cabin-id="{{ $cabins[$i]->id }}" class="cabin {{ $cabins[$i]->status ? 'soldC' : 'avaiableC'  }} "><span>{{ $cabins[$i]->position }}</span></a>
+								@endif
+								@if($i+2 < 73)
+									@if ($cabins[$i+2]->id <= 30 )
+										<a href="#cabin-modal" data-toggle="modal" data-cabin-id="{{ $cabins[$i + 2]->id }}" class="cabin {{ $cabins[$i + 2]->status ? 'soldA' : 'avaiableA'  }}"><span>{{ $cabins[$i+2]->position }}</span></a>
+									@else
+										<a href="#cabin-modal" data-toggle="modal" data-cabin-id="{{ $cabins[$i + 2]->id }}" class="cabin {{ $cabins[$i + 2]->status ? 'soldC' : 'avaiableC'  }}"><span>{{ $cabins[$i+2]->position }}</span></a>
+									@endif
 								@else
 									<div class="row">
 										<div class="col">
@@ -68,9 +80,17 @@
 						</div>
 						<div class="row">
 							<div class="col">
-								<a href="#cabin-modal" data-toggle="modal" data-cabin-id="{{ $cabins[$i + 1]->id }}" class="cabin {{ $cabins[$i + 1]->status ? 'soldA' : 'avaiableA'  }}"><span>{{ $cabins[$i+1]->position }}</span></a>
-								@if($i+3 < 81)
-								<a href="#cabin-modal" data-toggle="modal" data-cabin-id="{{ $cabins[$i + 3]->id }}" class="cabin {{ $cabins[$i + 3]->status ? 'soldA' : 'avaiableA'  }}"><span>{{ $cabins[$i+3]->position }}</span></a>
+								@if ($cabins[$i + 1]->id <= 30)
+									<a href="#cabin-modal" data-toggle="modal" data-cabin-id="{{ $cabins[$i + 1]->id }}" class="cabin {{ $cabins[$i + 1]->status ? 'soldA' : 'avaiableA'  }}"><span>{{ $cabins[$i+1]->position }}</span></a>
+								@else
+									<a href="#cabin-modal" data-toggle="modal" data-cabin-id="{{ $cabins[$i + 1]->id }}" class="cabin {{ $cabins[$i + 1]->status ? 'soldC' : 'avaiableC'  }}"><span>{{ $cabins[$i+1]->position }}</span></a>
+								@endif
+								@if($i+3 < 73)
+									@if ($cabins[$i +3 ]->id <= 30)
+										<a href="#cabin-modal" data-toggle="modal" data-cabin-id="{{ $cabins[$i + 3]->id }}" class="cabin {{ $cabins[$i + 3]->status ? 'soldA' : 'avaiableA'  }}"><span>{{ $cabins[$i+3]->position }}</span></a>
+									@else
+										<a href="#cabin-modal" data-toggle="modal" data-cabin-id="{{ $cabins[$i + 3]->id }}" class="cabin {{ $cabins[$i + 3]->status ? 'soldC' : 'avaiableC'  }}"><span>{{ $cabins[$i+3]->position }}</span></a>
+									@endif
 								@else
 									<div class="row">
 										<div class="col">
@@ -94,7 +114,7 @@
 		
 		<div class="cabinBg" data-simplebar>
 			<div id="" class="selectable-grid" data-multiple="true" style="display: flex;">
-				@for($i=82;$i<=148;$i+=4)
+				@for($i=74;$i<=140;$i+=4)
 					<div class="col-lg-12">
 						<div class="row">
 							<img src="img/Ativo3.svg" height="100" width="180" class="col"> </img>
@@ -102,7 +122,7 @@
 						<div class="row">
 							<div class="col">
 								<a href="#cabin-modal" data-toggle="modal" data-cabin-id="{{ $cabins[$i]->id }}" class="cabin {{ $cabins[$i]->status ? 'soldB' : 'avaiableB'  }} "><span>{{ $cabins[$i]->position }}</span></a>
-								@if($i+2 < 148)
+								@if($i+2 < 140)
 								<a href="#cabin-modal" data-toggle="modal" data-cabin-id="{{ $cabins[$i + 2]->id }}" class="cabin {{ $cabins[$i + 2]->status ? 'soldB' : 'avaiableB'  }}"><span>{{ $cabins[$i+2]->position }}</span></a>
 								@else
 									<div class="row">
@@ -116,7 +136,7 @@
 						<div class="row">
 							<div class="col">
 								<a href="#cabin-modal" data-toggle="modal" data-cabin-id="{{ $cabins[$i + 1]->id }}" class="cabin {{ $cabins[$i + 1]->status ? 'soldB' : 'avaiableB'  }}"><span>{{ $cabins[$i+1]->position }}</span></a>
-								@if($i+3 < 148)
+								@if($i+3 < 140)
 								<a href="#cabin-modal" data-toggle="modal" data-cabin-id="{{ $cabins[$i + 3]->id }}" class="cabin {{ $cabins[$i + 3]->status ? 'soldB' : 'avaiableB'  }}"><span>{{ $cabins[$i+3]->position }}</span></a>
 								@else
 									<div class="row">

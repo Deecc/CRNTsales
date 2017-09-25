@@ -155,6 +155,11 @@ body {
     opacity: 0.3;
 }
 
+.cabin.soldC {
+    background: url("/img/AvaiableC.svg") no-repeat;
+    opacity: 0.3;
+}
+
 .cabin.avaiableA {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -185,6 +190,22 @@ body {
     height: 80px;
     width: 85px;
     background: url("/img/AvaiableB.svg") no-repeat;
+}
+
+.cabin.avaiableC {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 80px;
+    width: 85px;
+    background: url("/img/AvaiableC.svg") no-repeat;
 }
 
 .carnatalLogo {
@@ -5669,23 +5690,23 @@ tbody.collapse.in {
 }
 
 .navbar-default .navbar-text {
-    color: #777;
+    color: #fff;
 }
 
 .navbar-default .navbar-nav>li>a {
-    color: #FFFFFF;
+    color: #fff;
 }
 
 .navbar-default .navbar-nav>li>a:hover,
 .navbar-default .navbar-nav>li>a:focus {
-    color: #EA22C2;
+    color: #FD0D91;
     background-color: transparent;
 }
 
 .navbar-default .navbar-nav>.active>a,
 .navbar-default .navbar-nav>.active>a:hover,
 .navbar-default .navbar-nav>.active>a:focus {
-    color: #555;
+    color: #D8D1D1;
     background-color: #460544;
 }
 
@@ -5718,12 +5739,12 @@ tbody.collapse.in {
 .navbar-default .navbar-nav>.open>a:hover,
 .navbar-default .navbar-nav>.open>a:focus {
     background-color: #460544;
-    color: #555;
+    color: #fcc;
 }
 
 @media (max-width: 767px) {
     .navbar-default .navbar-nav .open .dropdown-menu>li>a {
-        color: #777;
+        color: #fff;
     }
     .navbar-default .navbar-nav .open .dropdown-menu>li>a:hover,
     .navbar-default .navbar-nav .open .dropdown-menu>li>a:focus {
@@ -5745,7 +5766,7 @@ tbody.collapse.in {
 }
 
 .navbar-default .navbar-link {
-    color: #777;
+    color: #fff;
 }
 
 .navbar-default .navbar-link:hover {
