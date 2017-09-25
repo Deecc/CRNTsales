@@ -2,7 +2,7 @@
 @charset "UTF-8";
 body {
     background: url("/img/bg-gray-23.jpg");
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .bgWelcome {
